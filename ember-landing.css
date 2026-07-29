@@ -552,6 +552,12 @@ section{padding:120px 0;}
   .res-row{grid-template-columns:1fr;}
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
 /* ---------- CTA STRIP ---------- */
 .cta-strip{
   text-align:center;
