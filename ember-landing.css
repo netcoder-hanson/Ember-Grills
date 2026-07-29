@@ -143,6 +143,7 @@ nav{
   content:"";
   position:absolute;
   inset:0;
+  z-index:1;
   background:
     radial-gradient(ellipse 60% 40% at 50% 100%, rgba(193,68,14,0.35), transparent 70%),
     radial-gradient(ellipse 40% 30% at 30% 90%, rgba(232,93,44,0.18), transparent 70%);
@@ -151,6 +152,24 @@ nav{
 @keyframes glow{
   from{opacity:0.7;}
   to{opacity:1;}
+}
+.hero-photo{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+}
+.hero-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0.5;
+}
+.hero-photo::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(16,13,11,0.4) 0%, rgba(16,13,11,0.88) 100%);
 }
 .hero-inner{position:relative; z-index:2;}
 .hero .eyebrow{margin-bottom:22px; display:block;}
@@ -200,7 +219,7 @@ nav{
   position:absolute;
   bottom:36px; left:50%;
   transform:translateX(-50%);
-  z-index:2;
+  z-index:3;
   width:1px;
   height:46px;
   background:linear-gradient(var(--gold), transparent);
@@ -428,6 +447,60 @@ section{padding:120px 0;}
   .menu-grid{grid-template-columns:1fr;}
   .fire-grid{grid-template-columns:1fr; gap:48px;}
   .skewer-art{height:260px;}
+}
+
+/* ---------- GALLERY ---------- */
+.gallery{
+  padding-top:0;
+  padding-bottom:100px;
+}
+.gallery-strip{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:minmax(240px, 1fr);
+  gap:20px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:6px;
+}
+.gallery-item{
+  position:relative;
+  aspect-ratio:3/4;
+  background:var(--bg-alt-2);
+  border:1px solid var(--line);
+  overflow:hidden;
+  scroll-snap-align:start;
+}
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.gallery-placeholder{
+  display:none;
+  position:absolute;
+  inset:0;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  text-align:center;
+  padding:18px;
+  background:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px),
+    var(--bg-alt-2);
+  background-size:22px 22px;
+}
+.gallery-placeholder .ph-icon{
+  font-size:1.6rem;
+  color:var(--gold);
+}
+.gallery-placeholder .ph-label{
+  font-family:'Space Mono', monospace;
+  font-size:0.7rem;
+  color:var(--ink-dim);
+  letter-spacing:0.03em;
 }
 
 /* ---------- VISIT ---------- */
