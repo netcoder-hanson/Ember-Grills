@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMBER — Lagos Suya &amp; Grill House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ember-landing.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#top" class="logo">EMBER<span>.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#menu">Menu</a>
+      <a href="#fire">The Fire</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <a href="#visit" class="nav-cta">Reserve a table</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <span class="eyebrow">Victoria Island, Lagos</span>
+    <h1>EMB<em>ER</em></h1>
+    <p class="hero-sub">Suya, asun and open-flame catfish, cooked the way the mama-put stalls on Allen Avenue have always done it — just louder, and with somewhere to sit down.</p>
+    <div class="hero-actions">
+      <a href="#visit" class="btn btn-primary">Reserve a table</a>
+      <a href="#menu" class="btn btn-ghost">See the menu</a>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"></div>
+</section>
+
+<section class="fire" id="fire">
+  <div class="wrap fire-grid">
+    <div class="reveal">
+      <span class="eyebrow">The Fire</span>
+      <h2 class="section-title fire-title">Nothing here has seen a microwave.</h2>
+      <p class="fire-copy">Every plate leaves a charcoal grill built by the same welder who's done it for us since we opened. We blend our own yaji in-house every morning — ginger, groundnut, cloves, and a heat level we won't write down.</p>
+      <p>No gas, no shortcuts. If the coals aren't ready, your table waits — and we'll tell you so.</p>
+      <div class="fire-stats">
+        <div class="fire-stat">
+          <span class="num">600°C</span>
+          <span class="label">Grill peak</span>
+        </div>
+        <div class="fire-stat">
+          <span class="num">14</span>
+          <span class="label">Yaji spices</span>
+        </div>
+        <div class="fire-stat">
+          <span class="num">6AM</span>
+          <span class="label">Coals lit daily</span>
+        </div>
+      </div>
+    </div>
+    <div class="skewer-art reveal" aria-hidden="true">
+      <div class="flame"></div>
+      <div class="skewer s1"><span class="chunk"></span><span class="chunk"></span><span class="chunk"></span></div>
+      <div class="skewer s2"><span class="chunk"></span><span class="chunk"></span><span class="chunk"></span></div>
+      <div class="skewer s3"><span class="chunk"></span><span class="chunk"></span><span class="chunk"></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Order Ticket No. 04</span>
+      <h2>Off the grill tonight</h2>
+    </div>
+
+    <div class="menu-grid">
+
+      <div class="ticket reveal">
+        <h3>The Grill</h3>
+        <span class="ticket-tag">Charcoal · À la carte</span>
+
+        <div class="dish">
+          <span class="dish-name">Beef suya
+            <span class="heat" aria-label="heat level 2 of 3">
+              <svg class="lit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg>
+              <svg class="lit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg>
+              <svg class="unlit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg>
+            </span>
+            <span class="desc">Skewered ribeye, yaji crust, red onion</span>
+          </span>
+          <span class="dish-leader"></span>
+          <span class="dish-price mono">₦8,500</span>
+        </div>
+
+        <div class="dish">
+          <span class="dish-name">Asun
+            <span class="heat" aria-label="heat level 3 of 3">
+              <svg class="lit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg>
+              <svg class="lit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg>
+              <svg class="lit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg>
+            </span>
+            <span class="desc">Chopped smoked goat, scotch bonnet oil</span>
+          </span>
+          <span class="dish-leader"></span>
+          <span class="dish-price mono">₦9,000</span>
+        </div>
+
+        <div class="dish">
+          <span class="dish-name">Point &amp; kill catfish
+            <span class="heat" aria-label="heat level 1 of 3">
+              <svg class="lit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg>
+              <svg class="unlit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg>
+              <svg class="unlit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg>
+            </span>
+            <span class="desc">Whole grilled, pepper sauce, ugu</span>
+          </span>
+          <span class="dish-leader"></span>
+          <span class="dish-price mono">₦12,000</span>
+        </div>
+
+        <div class="dish">
+          <span class="dish-name">Peppered goat chops
+            <span class="heat" aria-label="heat level 3 of 3">
+              <svg class="lit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg>
+              <svg class="lit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg>
+              <svg class="lit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg>
+            </span>
+            <span class="desc">Bone-in, charred pepper &amp; onion</span>
+          </span>
+          <span class="dish-leader"></span>
+          <span class="dish-price mono">₦10,500</span>
+        </div>
+      </div>
+
+      <div class="ticket reveal">
+        <h3>The Sides</h3>
+        <span class="ticket-tag">Stovetop · À la carte</span>
+
+        <div class="dish">
+          <span class="dish-name">Party jollof<span class="desc">Smoked, bottom-pot flavour</span></span>
+          <span class="dish-leader"></span>
+          <span class="dish-price mono">₦3,500</span>
+        </div>
+        <div class="dish">
+          <span class="dish-name">Fried plantain<span class="desc">Ripe, charcoal-finished</span></span>
+          <span class="dish-leader"></span>
+          <span class="dish-price mono">₦2,000</span>
+        </div>
+        <div class="dish">
+          <span class="dish-name">Moi moi<span class="desc">Steamed, boiled egg centre</span></span>
+          <span class="dish-leader"></span>
+          <span class="dish-price mono">₦2,500</span>
+        </div>
+        <div class="dish">
+          <span class="dish-name">Ugu &amp; ata din-din<span class="desc">Pumpkin leaf, pepper sauce</span></span>
+          <span class="dish-leader"></span>
+          <span class="dish-price mono">₦2,800</span>
+        </div>
+      </div>
+
+      <div class="ticket reveal">
+        <h3>The Drinks</h3>
+        <span class="ticket-tag">Bar · À la carte</span>
+
+        <div class="dish">
+          <span class="dish-name">Palm wine spritz<span class="desc">Fresh palm wine, soda, lime</span></span>
+          <span class="dish-leader"></span>
+          <span class="dish-price mono">₦4,000</span>
+        </div>
+        <div class="dish">
+          <span class="dish-name">Zobo<span class="desc">Hibiscus, ginger, pineapple</span></span>
+          <span class="dish-leader"></span>
+          <span class="dish-price mono">₦2,000</span>
+        </div>
+        <div class="dish">
+          <span class="dish-name">Chapman<span class="desc">House recipe, extra bitters</span></span>
+          <span class="dish-leader"></span>
+          <span class="dish-price mono">₦3,500</span>
+        </div>
+        <div class="dish">
+          <span class="dish-name">Star Lager<span class="desc">Ice cold, 60cl</span></span>
+          <span class="dish-leader"></span>
+          <span class="dish-price mono">₦2,500</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="heat-legend reveal">
+      <div class="item">
+        <span class="heat"><svg class="lit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg><svg class="unlit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg><svg class="unlit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg></span>
+        <span>Mild — kids order this</span>
+      </div>
+      <div class="item">
+        <span class="heat"><svg class="lit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg><svg class="lit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg><svg class="unlit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg></span>
+        <span>Medium — house default</span>
+      </div>
+      <div class="item">
+        <span class="heat"><svg class="lit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg><svg class="lit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg><svg class="lit" viewBox="0 0 24 24"><path d="M12 2c-3 4-6 6-6 11a6 6 0 0012 0c0-2-1-3-2-4 0 2-1 3-2 2 1-3-1-5-2-9z"/></svg></span>
+        <span>Hot — ask for extra zobo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap visit-grid">
+    <div class="reveal">
+      <span class="eyebrow">Visit</span>
+      <h2 class="section-title visit-title">Come hungry, leave smelling like smoke.</h2>
+
+      <div class="visit-block visit-block-spaced">
+        <span class="eyebrow">Address</span>
+        <p>14 Kofo Abayomi Street<br>Victoria Island, Lagos</p>
+      </div>
+      <div class="visit-block">
+        <span class="eyebrow">Hours</span>
+        <p>Tue–Sun, 4pm – 1am<span class="sub">Closed Mondays for coal delivery</span></p>
+      </div>
+      <div class="visit-block">
+        <span class="eyebrow">Reserve</span>
+        <a class="line" href="tel:+2348000000000">+234 800 000 0000</a>
+        <p class="sub">Or WhatsApp us — we reply faster there.</p>
+      </div>
+      <a href="tel:+2348000000000" class="btn btn-primary">Reserve a table</a>
+    </div>
+
+    <div class="res-card reveal">
+      <form id="resForm">
+        <h3>Book a table</h3>
+        <span class="ticket-tag">Order Ticket · Reservation</span>
+
+        <div class="field">
+          <label for="resName">Full name</label>
+          <input type="text" id="resName" name="name" placeholder="Adaeze Okafor" required>
+        </div>
+
+        <div class="res-row">
+          <div class="field">
+            <label for="resPhone">Phone</label>
+            <input type="tel" id="resPhone" name="phone" placeholder="080X XXX XXXX" required>
+          </div>
+          <div class="field">
+            <label for="resParty">Party size</label>
+            <select id="resParty" name="party" required>
+              <option value="">Select</option>
+              <option>1</option>
+              <option selected>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="res-row">
+          <div class="field">
+            <label for="resDate">Date</label>
+            <input type="date" id="resDate" name="date" required>
+          </div>
+          <div class="field">
+            <label for="resTime">Time</label>
+            <input type="time" id="resTime" name="time" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="resNotes">Notes (optional)</label>
+          <textarea id="resNotes" name="notes" placeholder="Allergies, celebrations, seating preference..."></textarea>
+        </div>
+
+        <button type="submit" class="res-submit">Reserve a table</button>
+        <p class="res-note">We'll confirm by phone within an hour — tables held for 15 minutes past booking time.</p>
+      </form>
+
+      <div class="res-confirm" id="resConfirm">
+        <span class="eyebrow">Ticket confirmed</span>
+        <h3 id="resConfirmName"></h3>
+        <p id="resConfirmDetails"></p>
+        <p class="res-note">We'll call to confirm shortly. See you at the grill.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap">
+    <span class="eyebrow">Order Ticket No. 04 — Table for two</span>
+    <h2 class="cta-title">The coals are lit. Your table isn't, yet.</h2>
+    <a href="tel:+2348000000000" class="btn btn-primary">Reserve a table</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span class="logo footer-logo">EMBER<span>.</span></span>
+    <div class="footer-links">
+      <a href="#menu">Menu</a>
+      <a href="#fire">The Fire</a>
+      <a href="#visit">Visit</a>
+      <a href="#" aria-label="Instagram">Instagram</a>
+    </div>
+    <span class="footer-copy">© 2026 EMBER GRILL HOUSE LTD.</span>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // reservation form
+  const resForm = document.getElementById('resForm');
+  const resConfirm = document.getElementById('resConfirm');
+  resForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('resName').value.trim() || 'Guest';
+    const party = document.getElementById('resParty').value;
+    const date = document.getElementById('resDate').value;
+    const time = document.getElementById('resTime').value;
+
+    let dateLabel = date;
+    if (date) {
+      const d = new Date(date + 'T00:00:00');
+      dateLabel = d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+    }
+
+    document.getElementById('resConfirmName').textContent = `Thanks, ${name}.`;
+    document.getElementById('resConfirmDetails').textContent =
+      `Table for ${party || '2'} · ${dateLabel || 'your requested date'}${time ? ' at ' + time : ''}`;
+
+    resForm.style.display = 'none';
+    resConfirm.classList.add('show');
+  });
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
