@@ -18,9 +18,9 @@ A single-page landing site for EMBER, a Lagos-based open-flame suya and grill ho
 - Fonts loaded from Google Fonts: [Fraunces](https://fonts.google.com/specimen/Fraunces) (display), [Work Sans](https://fonts.google.com/specimen/Work+Sans) (body), [Space Mono](https://fonts.google.com/specimen/Space+Mono) (prices, labels)
 
 ## Project structure
-
-```
-```
+.
+├── index.html    # everything — markup, styles, and script in one file
+└── README.md
 
 ## Running locally
 
