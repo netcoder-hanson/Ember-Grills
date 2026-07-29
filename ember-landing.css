@@ -217,6 +217,37 @@ section{padding:120px 0;}
   font-size:clamp(2rem, 4vw, 3rem);
 }
 
+.fire-intro-title{
+  margin-top:14px;
+  font-size:clamp(1.8rem,3.4vw,2.6rem);
+  max-width:14ch;
+}
+
+.fire-intro-copy{
+  margin-top:24px;
+}
+
+.visit-heading{
+  margin-top:14px;
+  font-size:clamp(1.8rem,3.4vw,2.6rem);
+}
+
+.visit-block-top{
+  margin-top:38px;
+}
+
+.res-confirm-title{
+  margin-bottom:10px;
+}
+
+.cta-title{
+  margin-top:18px;
+}
+
+.footer-brand{
+  font-size:1.05rem;
+}
+
 .reveal{
   opacity:0;
   transform:translateY(24px);

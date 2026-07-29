@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="ember-landing.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -41,8 +42,8 @@
   <div class="wrap fire-grid">
     <div class="reveal">
       <span class="eyebrow">The Fire</span>
-      <h2 class="section-title fire-title">Nothing here has seen a microwave.</h2>
-      <p class="fire-copy">Every plate leaves a charcoal grill built by the same welder who's done it for us since we opened. We blend our own yaji in-house every morning — ginger, groundnut, cloves, and a heat level we won't write down.</p>
+      <h2 class="fire-intro-title">Nothing here has seen a microwave.</h2>
+      <p class="fire-intro-copy">Every plate leaves a charcoal grill built by the same welder who's done it for us since we opened. We blend our own yaji in-house every morning — ginger, groundnut, cloves, and a heat level we won't write down.</p>
       <p>No gas, no shortcuts. If the coals aren't ready, your table waits — and we'll tell you so.</p>
       <div class="fire-stats">
         <div class="fire-stat">
@@ -209,9 +210,9 @@
   <div class="wrap visit-grid">
     <div class="reveal">
       <span class="eyebrow">Visit</span>
-      <h2 class="section-title visit-title">Come hungry, leave smelling like smoke.</h2>
+      <h2 class="visit-heading">Come hungry, leave smelling like smoke.</h2>
 
-      <div class="visit-block visit-block-spaced">
+      <div class="visit-block visit-block-top">
         <span class="eyebrow">Address</span>
         <p>14 Kofo Abayomi Street<br>Victoria Island, Lagos</p>
       </div>
@@ -271,13 +272,14 @@
           <textarea id="resNotes" name="notes" placeholder="Allergies, celebrations, seating preference..."></textarea>
         </div>
 
-        <button type="submit" class="res-submit">Reserve a table</button>
+        <button type="submit" class="res-submit" id="resSubmitBtn">Reserve a table</button>
         <p class="res-note">We'll confirm by phone within an hour — tables held for 15 minutes past booking time.</p>
+        <p class="res-error" id="resError">Something went wrong sending your reservation. Please call or WhatsApp us instead.</p>
       </form>
 
       <div class="res-confirm" id="resConfirm">
         <span class="eyebrow">Ticket confirmed</span>
-        <h3 id="resConfirmName"></h3>
+        <h3 id="resConfirmName" class="res-confirm-title"></h3>
         <p id="resConfirmDetails"></p>
         <p class="res-note">We'll call to confirm shortly. See you at the grill.</p>
       </div>
@@ -289,12 +291,13 @@
   <div class="wrap">
     <span class="eyebrow">Order Ticket No. 04 — Table for two</span>
     <h2 class="cta-title">The coals are lit. Your table isn't, yet.</h2>
+    <a href="tel:+2348000000000" class="btn btn-primary">Reserve a table</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap footer-inner">
-    <span class="logo footer-logo">EMBER<span>.</span></span>
+    <span class="logo footer-brand">EMBER<span>.</span></span>
     <div class="footer-links">
       <a href="#menu">Menu</a>
       <a href="#fire">The Fire</a>
@@ -318,15 +321,29 @@
     navToggle.setAttribute('aria-expanded', 'false');
   }));
 
-  // reservation form
+  // reservation form — sent via EmailJS (https://www.emailjs.com)
+  // Replace these three placeholders with your own EmailJS values (see README).
+  const EMAILJS_PUBLIC_KEY  = 'T-dR_IltGn4eraeWy';
+  const EMAILJS_SERVICE_ID  = 'service_e5xyl4q';
+  const EMAILJS_TEMPLATE_ID = 'template_lzddmar';
+
+  emailjs.init({ publicKey: T-dR_IltGn4eraeWy });
+
   const resForm = document.getElementById('resForm');
   const resConfirm = document.getElementById('resConfirm');
+  const resError = document.getElementById('resError');
+  const resSubmitBtn = document.getElementById('resSubmitBtn');
+
   resForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    resError.classList.remove('show');
+
     const name = document.getElementById('resName').value.trim() || 'Guest';
+    const phone = document.getElementById('resPhone').value.trim();
     const party = document.getElementById('resParty').value;
     const date = document.getElementById('resDate').value;
     const time = document.getElementById('resTime').value;
+    const notes = document.getElementById('resNotes').value.trim();
 
     let dateLabel = date;
     if (date) {
@@ -334,12 +351,28 @@
       dateLabel = d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
     }
 
-    document.getElementById('resConfirmName').textContent = `Thanks, ${name}.`;
-    document.getElementById('resConfirmDetails').textContent =
-      `Table for ${party || '2'} · ${dateLabel || 'your requested date'}${time ? ' at ' + time : ''}`;
+    resSubmitBtn.disabled = true;
+    resSubmitBtn.textContent = 'Sending...';
 
-    resForm.style.display = 'none';
-    resConfirm.classList.add('show');
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      guest_name: name,
+      guest_phone: phone,
+      party_size: party || '2',
+      res_date: dateLabel || date,
+      res_time: time,
+      notes: notes || 'None'
+    }).then(() => {
+      document.getElementById('resConfirmName').textContent = `Thanks, ${name}.`;
+      document.getElementById('resConfirmDetails').textContent =
+        `Table for ${party || '2'} · ${dateLabel || 'your requested date'}${time ? ' at ' + time : ''}`;
+      resForm.style.display = 'none';
+      resConfirm.classList.add('show');
+    }).catch((err) => {
+      console.error('EmailJS error:', err);
+      resError.classList.add('show');
+      resSubmitBtn.disabled = false;
+      resSubmitBtn.textContent = 'Reserve a table';
+    });
   });
 
   // scroll reveal
