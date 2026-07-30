@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Open-flame suya, asun, and Lagos street-grill classics in Victoria Island — book a table online.">
+<meta property="og:title" content="EMBER — Lagos Suya & Grill House">
+<meta property="og:description" content="Open-flame suya, asun, and Lagos street-grill classics in Victoria Island — book a table online.">
+<meta property="og:image" content="images/hero.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <title>EMBER — Lagos Suya &amp; Grill House</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -265,7 +272,7 @@
       </div>
       <div class="visit-block">
         <span class="eyebrow">Hours</span>
-        <p>Tue–Sun, 4pm – 1am<span class="sub">Closed Mondays for coal delivery</span></p>
+        <p>Tue–Sun, 10am – 12am<span class="sub">We resume by 11am on Mondays due to coal delivery</span></p>
       </div>
       <div class="visit-block">
         <span class="eyebrow">Reserve</span>
@@ -276,6 +283,12 @@
 
     <div class="res-card reveal">
       <form id="resForm">
+        
+        <div class="field" style="position:absolute; left:-9999px; top:-9999px;" aria-hidden="true">
+          <label for="resCompany">Company</label>
+          <input type="text" id="resCompany" name="company" tabindex="-1" autocomplete="off">
+        </div>
+
         <h3>Book a table</h3>
         <span class="ticket-tag">Order Ticket · Reservation</span>
 
@@ -400,9 +413,9 @@ wireDateHint('resTime', 'resTimeHint');
   const resSubmitBtn = document.getElementById('resSubmitBtn');
 
   resForm.addEventListener('submit', (e) => {
+    if (document.getElementById('resCompany').value) return; // bot caught, silently ignore
     e.preventDefault();
     resError.classList.remove('show');
-
     const name = document.getElementById('resName').value.trim() || 'Guest';
     const phone = document.getElementById('resPhone').value.trim();
     const party = document.getElementById('resParty').value;
