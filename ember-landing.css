@@ -591,6 +591,24 @@ section{padding:120px 0;}
 }
 .field input::placeholder,
 .field textarea::placeholder{color:var(--ink-dim); opacity:0.6;}
+
+.field-wrap{position:relative;}
+.field-hint{
+  position:absolute;
+  inset:0;
+  right:40px;
+  display:flex;
+  align-items:center;
+  padding-left:14px;
+  background:var(--bg);
+  color:var(--ink-dim);
+  font-family:'Work Sans', sans-serif;
+  font-size:0.95rem;
+  pointer-events:none;
+  border-radius:2px 0 0 2px;
+}
+.field-hint.hidden{display:none;}
+
 .res-submit{
   width:100%;
   border:1px solid var(--ember);

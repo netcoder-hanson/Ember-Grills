@@ -303,14 +303,18 @@
           </div>
         </div>
 
-        <div class="res-row">
-          <div class="field">
-            <label for="resDate">Date</label>
+        <div class="field">
+          <label for="resDate">Date</label>
+          <div class="field-wrap">
             <input type="date" id="resDate" name="date" required>
+            <span class="field-hint" id="resDateHint">Select date</span>
           </div>
-          <div class="field">
-            <label for="resTime">Time</label>
+        </div>
+        <div class="field">
+          <label for="resTime">Time</label>
+          <div class="field-wrap">
             <input type="time" id="resTime" name="time" required>
+            <span class="field-hint" id="resTimeHint">Select time</span>
           </div>
         </div>
 
@@ -325,7 +329,7 @@
       </form>
 
       <div class="res-confirm" id="resConfirm">
-        <span class="eyebrow">Ticket confirmed</span>
+        <span class="eyebrow">Reservation confirmed</span>
         <h3 id="resConfirmName" class="res-confirm-title"></h3>
         <p id="resConfirmDetails"></p>
         <p class="res-note">We'll call to confirm shortly. See you at the grill.</p>
@@ -377,6 +381,20 @@
   emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
   const resForm = document.getElementById('resForm');
+
+  function wireDateHint(inputId, hintId){
+    const input = document.getElementById(inputId);
+    const hint = document.getElementById(hintId);
+    const update = () => hint.classList.toggle('hidden', !!input.value);
+    update();
+    input.addEventListener('input', update);
+    input.addEventListener('change', update);
+    input.addEventListener('focus', () => hint.classList.add('hidden'));
+    input.addEventListener('blur', update);
+  }
+wireDateHint('resDate', 'resDateHint');
+wireDateHint('resTime', 'resTimeHint');
+
   const resConfirm = document.getElementById('resConfirm');
   const resError = document.getElementById('resError');
   const resSubmitBtn = document.getElementById('resSubmitBtn');
