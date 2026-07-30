@@ -413,7 +413,7 @@ wireDateHint('resTime', 'resTimeHint');
   const resSubmitBtn = document.getElementById('resSubmitBtn');
 
   resForm.addEventListener('submit', (e) => {
-    if (document.getElementById('resCompany').value) return; // bot caught, silently ignore
+    if (document.getElementById('resCompany').value) return; 
     e.preventDefault();
     resError.classList.remove('show');
     const name = document.getElementById('resName').value.trim() || 'Guest';
