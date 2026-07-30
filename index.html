@@ -414,6 +414,9 @@
         `Table for ${party || '2'} · ${dateLabel || 'your requested date'}${time ? ' at ' + time : ''}`;
       resForm.style.display = 'none';
       resConfirm.classList.add('show');
+      resConfirm.setAttribute('tabindex', '-1');
+      resConfirm.focus({ preventScroll: true });
+      resConfirm.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }).catch((err) => {
       console.error('EmailJS error:', err);
       resError.classList.add('show');
