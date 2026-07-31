@@ -1,14 +1,14 @@
 :root{
-  --bg:#100D0B;
-  --bg-alt:#1B1613;
-  --bg-alt-2:#221C18;
-  --ink:#EDE6DA;
-  --ink-dim:#A99C8B;
+  --bg:#F5F0E6;
+  --bg-alt:#ECE4D4;
+  --bg-alt-2:#FFFFFF;
+  --ink:#1B1613;
+  --ink-dim:#6E6154;
   --ember:#C1440E;
-  --ember-bright:#E85D2C;
+  --ember-bright:#D14F1E;
   --indigo:#2B4257;
-  --gold:#C89B3C;
-  --line: rgba(200,155,60,0.22);
+  --gold:#96721E;
+  --line: rgba(140,108,40,0.3);
 }
 
 *{box-sizing:border-box; margin:0; padding:0;}
@@ -66,6 +66,11 @@ header{
   background:rgba(16,13,11,0.82);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
+  color:var(--ink);
+    --ink:#EDE6DA;
+  --ink-dim:#A99C8B;
+  --gold:#C89B3C;
+  --line: rgba(200,155,60,0.22);
 }
 nav{
   display:flex;
@@ -128,6 +133,17 @@ nav{
 }
 
 /* ---------- HERO ---------- */
+
+.hero{
+  --bg:#100D0B;
+  --bg-alt:#1B1613;
+  --bg-alt-2:#221C18;
+  --ink:#EDE6DA;
+  --ink-dim:#A99C8B;
+  --gold:#C89B3C;
+  --line: rgba(200,155,60,0.22);
+}
+
 .hero{
   position:relative;
   min-height:100vh;
@@ -646,7 +662,6 @@ section{padding:120px 0;}
 
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="time"]::-webkit-calendar-picker-indicator {
-  filter: invert(1);
   cursor: pointer;
 }
 
